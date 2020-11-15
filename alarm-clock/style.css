@@ -1,0 +1,15 @@
+body {
+  background-color: grey;
+  text-align: center;
+}
+
+h1 {
+  font-size: 50px;
+  color: white;
+}
+
+button {
+  cursor: pointer;
+  padding: 10px;
+  color: blue;
+}
