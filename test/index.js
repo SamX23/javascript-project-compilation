@@ -1,4 +1,10 @@
+import _ from "lodash";
 import { coffeeStock, isCoffeeMachineReady } from "./state.js";
+
+const myArray = [1, 2, 3, 4];
+const sum = _.sum(myArray);
+
+console.log(sum);
 
 const displayStock = (stock) => {
   for (const type in stock) {
