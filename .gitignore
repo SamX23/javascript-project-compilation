@@ -1,3 +1,5 @@
 node_modules
 .prettierrc.json
 jest-practice/yarn.lock
+jest-practice/coverage
+
