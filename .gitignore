@@ -3,3 +3,4 @@ node_modules
 jest-practice/yarn.lock
 jest-practice/coverage
 
+*/node_modules
