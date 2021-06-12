@@ -20,12 +20,11 @@ function showTime() {
 
 showTime();
 
-
-function addMinSec(id){
-  let select = id
-  let min - 59
+function addMinSec(id) {
+  let select = id;
+  let min = 59;
 
   for (let i = 0; i <= min; i++) {
-    select.options[i]
+    select.options[i];
   }
 }
