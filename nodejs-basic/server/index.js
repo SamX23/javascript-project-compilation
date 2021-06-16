@@ -9,7 +9,7 @@ const data = {
 };
 
 // HTML Static Response
-function onRequest(request, response) {
+const onRequest = (request, response) => {
   response.writeHead(200, { "Content-Type": "text/html" });
   fs.readFile("./index.html", null, (error, data) => {
     console.log("Response reloaded.");
@@ -21,15 +21,31 @@ function onRequest(request, response) {
     }
     response.end();
   });
-}
+};
 
 // JSON Static Response, usually to send api request
-function onRequestJson(request, response) {
+const onRequestJson = (request, response) => {
   response.writeHead(200, { "Content-type": "application/json" });
-
   response.end(JSON.stringify(data));
-}
+};
+
+// Request and print the query
+const onRequestQuery = (req, res) => {
+  res.writeHead(200, { "Content-Type": "text/html" });
+  let query = url.parse(req.url, true).query;
+  let txt = query.name + " " + query.age;
+  res.end(txt);
+};
+
+// Request and print any url
+const onRequestAny = (req, res) => {
+  res.writeHead(200, { "Content-Type": "text/html" });
+  res.write(req.url);
+  res.end();
+};
 
 // http.createServer(onRequest).listen(PORT);
 http.createServer(onRequestJson).listen(PORT);
+// http.createServer(onRequestQuery).listen(PORT);
+// http.createServer(onRequestAny).listen(PORT);
 console.log(`Server listening on http://localhost:${PORT}`);
